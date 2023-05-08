@@ -55,9 +55,18 @@ const login = catchError(async(req, res) => {
     
 });
 
+const remove = catchError(async(req, res) => {
+    const { id } = req.params;
+    await Messages.destroy({ where: {userId:id}});
+    await User.destroy({ where: {id} });
+    return res.sendStatus(204);
+});
+
+
 module.exports = {
     getAll,
     update,
     login,
+    remove,
 
 }
