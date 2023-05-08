@@ -6,13 +6,8 @@ const User = sequelize.define('users', {
         type: DataTypes.STRING,
         unique: true
     },
-    password:{
-        type: DataTypes.STRING,
-        allowNull:false
-    },
     isConnected:{
         type: DataTypes.BOOLEAN,
-        defaultValue:false
     }
 });
 

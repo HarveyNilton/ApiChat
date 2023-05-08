@@ -8,9 +8,4 @@ messageRouter.route('/')
     .get(verifyJWT, getAll)
     .post(verifyJWT, create);
 
-messageRouter.route('/:id')
-    .get(verifyJWT, getOne)
-    .delete(verifyJWT, remove)
-    .put(verifyJWT, update);
-
 module.exports = messageRouter;
